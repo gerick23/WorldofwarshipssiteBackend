@@ -27,3 +27,33 @@
 ->Damage_Dealt
 ->Maximum_Damage_Dealt
 ->Aircraft_Kills
+ALTER TABLE stories
+ADD Distance TEXT,
+ADD Battles TEXT,
+ADD Maximum_XP TEXT,
+ADD Main_Battery_Kills TEXT,
+ADD Main_Battery_Hits TEXT,
+ADD Main_battery_shots TEXT,
+ADD Maximum_Scouting_Damage TEXT,
+ADD Ships_Spotted TEXT,
+ADD Maximum_Secondary_Kills_In_A_Battle TEXT,
+ADD Secondary_Battery_Kills TEXT,
+ADD Secondary_Battery_Hits TEXT,
+ADD Secondary_Battery_Shots TEXT,
+ADD XP TEXT,
+ADD Survived_Battles TEXT,
+ADD Draws TEXT,
+ADD Survived_Wins TEXT,
+ADD Total_Damage_Scouting TEXT,
+ADD Maximum_Kills_in_A_Battle TEXT,
+ADD Maximum_Kills_In_A_Battle TEXT,
+ADD Ramming_Kills TEXT,
+ADD Maximum_Torpedo_Kills_In_A_Battle TEXT,
+ADD Torpedo_Kills TEXT,
+ADD Torpedo_Hits TEXT,
+ADD Maximum_Aircraft_Kills_In_A_Battle TEXT,
+ADD Wins TEXT,
+ADD Losses TEXT,
+ADD Damage_Dealt TEXT,
+ADD Maximum_Damage_Dealt TEXT,
+ADD Aircraft_Kills TEXT
