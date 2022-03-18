@@ -7,9 +7,15 @@ const { Stories } = require('../models')
 Router.get('/',async (req,res)=>{
     try{
     const numberofstories = await Stories.count();
+    let idvalue = Math.floor((Math.random() * numberofstories) + 1);
     console.log(numberofstories)
-    const stories =await Stories.findAll()
-    res.json(stories)
+    const story =await Stories.findAll({
+        where:{
+            id:idvalue
+        }
+    })
+    res.json(story)
+    console.log({story})
     }catch(error){
         console.log(error)
     }

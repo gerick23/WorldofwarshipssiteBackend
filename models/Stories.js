@@ -14,6 +14,9 @@ Stories.init({
     },
     stories: {
         type:DataTypes.TEXT,
+    },
+    title:{
+        type:DataTypes.TEXT,
     }
     },
     {
