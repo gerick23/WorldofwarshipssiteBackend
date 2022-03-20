@@ -7,7 +7,7 @@ const storiesRouter = require('./controllers/Stories')
 app.use(cors())
 app.use(express.json())
 
-
+//server configuration, fairly basic
 app.use('/', storiesRouter)
 const start = async ()=>{
     await connectToDatabase()

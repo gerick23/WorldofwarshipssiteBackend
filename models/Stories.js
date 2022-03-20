@@ -3,7 +3,7 @@ const {Model,DataTypes} = require('sequelize')
 const {sequelize} = require('../util/db')
 
 
-
+//database structure/model, used for querying the postgres DB
 
 class Stories extends Model{}
 Stories.init({
