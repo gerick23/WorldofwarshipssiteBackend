@@ -15,8 +15,8 @@ Router.get('/',async (req,res)=>{
             id:idvalue
         }
     })
-    res.json(story)
-    console.log({story})
+    console.log(story)
+    return res.json(story)
     }catch(error){
         console.log(error)
     }
