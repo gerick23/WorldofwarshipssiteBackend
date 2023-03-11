@@ -1,7 +1,12 @@
-const Stories = require('./Stories')
+const Info = require('./Info')
+const User = require('./users')
+Info.sync()
 
-Stories.sync()
 
+User.hasMany(Info)
+Info.belongsTo(User)
+Info.sync({alter:true})
+User.sync({alter:true})
 module.exports = {
-    Stories
+    Info,User
 }

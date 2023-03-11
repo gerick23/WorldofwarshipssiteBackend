@@ -5,26 +5,26 @@ const {sequelize} = require('../util/db')
 
 //database structure/model, used for querying the postgres DB
 
-class Stories extends Model{}
-Stories.init({
+class Info extends Model{}
+Info.init({
     id: {
         type:DataTypes.INTEGER,
         primaryKey:true,
         autoIncrement:true,
     },
-    stories: {
+    statistic: {
         type:DataTypes.TEXT,
     },
-    title:{
-        type:DataTypes.TEXT,
+    value:{
+        type:DataTypes.INTEGER,
     }
     },
     {
         sequelize,
         underscored:true,
         timestamps:false,
-        modelName:'Stories'
+        modelName:'Info'
     })
 
-module.exports =Stories
+module.exports =Info
  
