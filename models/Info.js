@@ -1,6 +1,6 @@
 const {Model,DataTypes} = require('sequelize')
 
-const {sequelize} = require('../util/db')
+const { sequelize } = require('../util/db')
 
 
 //database structure/model, used for querying the postgres DB
@@ -14,9 +14,11 @@ Info.init({
     },
     statistic: {
         type:DataTypes.TEXT,
+        allowNull: false,
     },
     value:{
         type:DataTypes.INTEGER,
+        allowNull: false,
     }
     },
     {
