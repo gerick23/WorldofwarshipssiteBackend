@@ -5,7 +5,7 @@ const api = supertest(app)
 const Info = require('../models/Info')
 
 
-describe('adds a stat to the DB and then gets it', ()=>{
+describe('checks database operations', ()=>{
     beforeAll(async ()=>{
         await Info.destroy({where:{}})
     })
