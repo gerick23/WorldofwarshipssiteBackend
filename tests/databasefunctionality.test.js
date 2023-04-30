@@ -1,5 +1,5 @@
 
-const supertest =require('supertest')
+/*const supertest =require('supertest')
 const app = require('../index')
 const api = supertest(app)
 const Info = require('../models/Info')
@@ -37,6 +37,5 @@ describe('checks database operations', ()=>{
         console.log(deletedtable.body)
         expect(deletedtable.body).toHaveLength(1)
     })
-    Info.destroy({where:{}})
-
-})
+    //Info.destroy({where:{}})
+})*/

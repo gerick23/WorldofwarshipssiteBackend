@@ -3,9 +3,8 @@ const bcrypt = require('bcrypt')
 
 function hasher(passwordhash){
     const saltrounds= 10;
-    const salt = bcrypt.genSalt(saltrounds)
-    const password = bcrypt.hash(passwordhash,salt);
+    const password = bcrypt.hashSync(passwordhash,saltrounds);
     return password
 }
 
-export {hasher}
+module.exports = hasher
