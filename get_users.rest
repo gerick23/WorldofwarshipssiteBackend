@@ -1,11 +1,19 @@
 GET http://localhost:3001/api/users/
 ###
+POST http://localhost:3001/api/login/
+Content-Type: application/json
+
+{
+    "username":"christopheasdadsr",
+    "hashedpassword":"gimp"
+}
+###
 POST http://localhost:3001/api/login/ 
 Content-Type: application/json
 
 {
-    "username":"secret",
-    "hashedpassword":"secret"
+    "username":"christopher",
+    "hashedpassword":"gimp"
 }
 ###
 POST http://localhost:3001/api/Infos/
