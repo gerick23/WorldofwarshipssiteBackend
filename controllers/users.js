@@ -17,7 +17,7 @@ router.get('/',async(req,res)=>{
 
 router.post('/',async(req,res)=>{
     console.log("req body",req.body)
-    const hashedpass = hasher(req.body.password)
+    const hashedpass = hasher(req.body.hashedpassword)
     console.log("hashedpass",hashedpass)
     try{
         const usernamesearch = await User.findOne({where:{username:req.body.username,hashedpassword:hashedpass}})
