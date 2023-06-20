@@ -13,7 +13,7 @@ app.use(express.json())
 
 //server/router configuration, fairly basic
 
-app.use('/api/Infos',InfoRouter);
+app.use('/api/infos',InfoRouter);
 app.use('/api/login',LoginRouter);
 app.use('/api/users',UsersRouter);
 

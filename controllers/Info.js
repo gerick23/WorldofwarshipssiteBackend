@@ -33,7 +33,7 @@ router.get('/', async (req,res)=>{
 
 router.post('/',getTokenFrom, async(req,res)=>{
     try{
-
+        console.log(req.body)
         const user = await User.findOne({where:{username:req.decodedToken.username}})
         console.log("user",user)
         const stat = await Info.create({...req.body,userId:user.id})
