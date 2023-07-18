@@ -40,32 +40,16 @@ router.post('/',getTokenFrom, async(req,res)=>{
         console.log(stat)
         res.json(stat)
     }catch(error){
-        console.log(error)
+        console.log("error",error)
         return res.status(400).json({error})
     }
 
 
 })
-
-router.get('/:statistic/', async(req,res)=>{
-    const returnedstat = await Info.findAll({where:{statistic:req.params.statistic}})
-    if(returnedstat){
-        res.json(returnedstat)
-    }else{
-        res.status(404).end()
-    }
-})
-router.get('/:statistic/:value', async (req,res)=>{
-    const returnvalue = await Info.findAll({where:{statistic:req.params.statistic,value:Number(req.params.value)}})
-    if(returnvalue){
-        return res.json(returnvalue);
-    }else{
-        return NULL
-    }
-})
-router.delete('/:statistic/:value',async(req,res,next)=>{
+router.delete('/',async(req,res,next)=>{
     try{
-        await Info.destroy({where:{statistic:req.params.statistic,value:Number(req.params.value)}})
+        const user = await User.findOne({where:{username:req.decodedToken.username}})
+        await Info.destroy({where:{userId:user.userId}})
         res.status(204).end()
     }catch(error){
         next(error)
