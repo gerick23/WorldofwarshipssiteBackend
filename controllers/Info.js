@@ -33,10 +33,12 @@ router.get('/', async (req,res)=>{
 router.post('/userdata',getTokenFrom,async(req,res)=>{
     try{
         console.log("userrequest",req)
+        console.log(req)
         const user = await User.findOne({where:{username:req.decodedToken.username}})
-        const graphvalues = await Info.findAll({attributes: {exclude: ['id','userId','statistic']}},
+        const graphvalues = await Info.findAll({attributes: {exclude: ['id','userId','updatedAt']}},
             {where:{statistic:req.body.value,userId:user.id}
         });
+        console.log(graphvalues)
         return res.json(graphvalues);
     }catch(error){
         console.log("error",error)
