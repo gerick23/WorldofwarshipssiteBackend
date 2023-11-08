@@ -16,6 +16,7 @@
     });
     console.log(user)
     const passwordcorrect = user===null? false: await bcrypt.compare(body.password,user.hashedpassword);
+    console.log(passwordcorrect)
     if(!(user && passwordcorrect)){
         return response.status(401).json({
             error:'invalid username or password'

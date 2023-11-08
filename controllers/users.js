@@ -19,6 +19,7 @@ router.get('/',async(req,res)=>{
 
 
 router.post('/',async(req,res)=>{
+    console.log("fuck off")
     const hashedpass = hasher(req.body.hashedpassword)
     const attempt =await getPlayerNames(req.body.username);
     try{
@@ -30,6 +31,7 @@ router.post('/',async(req,res)=>{
         const user = await User.create({username:req.body.username,hashedpassword:hashedpass})
         res.json(user)
     }catch(error){
+        console.log({error});
         return res.status(400).json({error})
     }
 })
