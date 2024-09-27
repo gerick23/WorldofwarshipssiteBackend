@@ -8,15 +8,15 @@
  const saltrounds = 10
  router.post('/', async(request,response)=>{
     const body = request.body
-    console.log(request.body)
+    // console.log(request.body) // Removed to avoid logging sensitive information
     const user = await User.findOne({
         where:{
             username:body.username,
         }
     });
-    console.log(user)
+    // console.log(user) // Removed to avoid logging sensitive information
     const passwordcorrect = user===null? false: await bcrypt.compare(body.password,user.hashedpassword);
-    console.log(passwordcorrect)
+    // console.log(passwordcorrect) // Removed to avoid logging sensitive information
     if(!(user && passwordcorrect)){
         return response.status(401).json({
             error:'invalid username or password'
@@ -28,7 +28,7 @@
         passord:user.hashedpassword,
     }
     const token = jwt.sign(userForToken,process.env.SECRET,{expiresIn:60*60})
-    console.log(token)
+    // console.log(token) // Removed to avoid logging sensitive information
     return response
         .status(200)
         .send({token,username:user.username})
